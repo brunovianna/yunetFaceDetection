@@ -1,5 +1,6 @@
 ## Face detection with yunet
 
+### Face detection in OpenFrameworks using dnn
 
 It turns out that doing face detection in 2025 is much more efficient with neural networks than cascades.
 So here is an OF example that uses opencv's facedetectoryn (for yunet).
