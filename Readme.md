@@ -14,6 +14,8 @@ How to find out your opencv version?
 
 The versions are coded in the ofApp::setup() function. Different versions might require editing the code.
 
+After downloading, you must copy the file into the bin/data folder. Create the data folder if it doesn't exist.
+
 ### Expected behavior
 
 The camera starts, and a red square will be drawn around the faces found.
