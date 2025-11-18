@@ -11,8 +11,19 @@ void ofApp::setup(){
     grabber.setup(camWidth, camHeight);
     
     // 2. Load the YuNet Model via the FaceDetectorYN wrapper
+    string modelPath;
 
-    string modelPath = ofToDataPath("face_detection_yunet_2022mar.onnx");
+    if (cv::getVersionMajor()>=4) {
+        if (cv::getVersionMinor()<=6) {
+            // opencv 4.6.0
+            modelPath = ofToDataPath("face_detection_yunet_2022mar.onnx"); 
+        } else {
+            // opencv 4.9.0 and greater
+            modelPath = ofToDataPath("face_detection_yunet_2023mar.onnx");
+
+        }
+    }
+
     
     //string modelPath = ofToDataPath("yunet.onnx");
     cv::Size inputSize = cv::Size(320, 320); // The size the network prefers
